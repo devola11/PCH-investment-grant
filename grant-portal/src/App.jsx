@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage'
 import GrantTypesPage from './pages/GrantTypesPage'
 import AdminPage from './pages/AdminPage'
 import FAQPage from './pages/FAQPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/grant-types" element={<GrantTypesPage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </div>
