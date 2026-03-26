@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Logo from './Logo'
 
 const navLinks = [
@@ -13,9 +13,23 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   const isActive = (to) =>
     to === '/' ? pathname === '/' : pathname.startsWith(to)
+
+  function handleApplyClick(e) {
+    e.preventDefault()
+    setMobileOpen(false)
+    if (pathname === '/') {
+      document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }
 
   return (
     <nav
@@ -24,8 +38,13 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" onClick={() => setMobileOpen(false)}>
+          {/* Logo — clickable, no underline */}
+          <Link
+            to="/"
+            onClick={() => setMobileOpen(false)}
+            className="no-underline"
+            style={{ textDecoration: 'none' }}
+          >
             <Logo variant="light" />
           </Link>
 
@@ -36,7 +55,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className="relative px-3 py-2 text-sm font-medium transition-colors"
-                style={{ color: isActive(link.to) ? '#f59e0b' : 'rgba(255,255,255,0.85)' }}
+                style={{ color: isActive(link.to) ? '#f59e0b' : 'rgba(255,255,255,0.85)', textDecoration: 'none' }}
               >
                 {link.label}
                 {isActive(link.to) && (
@@ -47,13 +66,18 @@ export default function Navbar() {
                 )}
               </Link>
             ))}
-            <Link
-              to="/"
-              className="ml-3 px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#f59e0b', color: '#1a3c6e' }}
+
+            {/* Apply Now button */}
+            <a
+              href="/#application-form"
+              onClick={handleApplyClick}
+              className="ml-3 px-4 py-2 text-sm font-medium text-white rounded cursor-pointer transition-colors"
+              style={{ backgroundColor: '#f59e0b', textDecoration: 'none' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#d97706')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#f59e0b')}
             >
               Apply Now
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -64,9 +88,7 @@ export default function Navbar() {
           >
             <span
               className="block w-5 h-0.5 bg-white transition-all duration-200"
-              style={{
-                transform: mobileOpen ? 'translateY(8px) rotate(45deg)' : 'none',
-              }}
+              style={{ transform: mobileOpen ? 'translateY(8px) rotate(45deg)' : 'none' }}
             />
             <span
               className="block w-5 h-0.5 bg-white transition-all duration-200"
@@ -74,9 +96,7 @@ export default function Navbar() {
             />
             <span
               className="block w-5 h-0.5 bg-white transition-all duration-200"
-              style={{
-                transform: mobileOpen ? 'translateY(-8px) rotate(-45deg)' : 'none',
-              }}
+              style={{ transform: mobileOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}
             />
           </button>
         </div>
@@ -85,10 +105,7 @@ export default function Navbar() {
       {/* Mobile dropdown */}
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
-        style={{
-          maxHeight: mobileOpen ? '320px' : '0',
-          backgroundColor: '#152f58',
-        }}
+        style={{ maxHeight: mobileOpen ? '320px' : '0', backgroundColor: '#152f58' }}
       >
         <div className="px-4 pt-2 pb-4 flex flex-col gap-1">
           {navLinks.map((link) => (
@@ -97,19 +114,19 @@ export default function Navbar() {
               to={link.to}
               onClick={() => setMobileOpen(false)}
               className="px-3 py-2.5 text-sm font-medium border-b border-white/10"
-              style={{ color: isActive(link.to) ? '#f59e0b' : 'rgba(255,255,255,0.85)' }}
+              style={{ color: isActive(link.to) ? '#f59e0b' : 'rgba(255,255,255,0.85)', textDecoration: 'none' }}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/"
-            onClick={() => setMobileOpen(false)}
-            className="mt-2 px-4 py-2.5 text-sm font-semibold text-center"
-            style={{ backgroundColor: '#f59e0b', color: '#1a3c6e' }}
+          <a
+            href="/#application-form"
+            onClick={handleApplyClick}
+            className="mt-2 px-4 py-2.5 text-sm font-medium text-white text-center rounded cursor-pointer transition-colors"
+            style={{ backgroundColor: '#f59e0b', textDecoration: 'none' }}
           >
             Apply Now
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

@@ -10,7 +10,7 @@ export default function HomePage() {
       <div className="bg-gray-50 border-b border-gray-200">
         <ProcessSteps />
       </div>
-      <div className="bg-white" id="apply">
+      <div className="bg-white" id="application-form">
         <div className="max-w-5xl mx-auto px-4 pt-8">
           <div className="border-b border-gray-200 mb-6 pb-4">
             <h2 className="text-xl font-bold text-[#1a3c6e] uppercase tracking-wide">
