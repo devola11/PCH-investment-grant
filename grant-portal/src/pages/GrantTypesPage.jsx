@@ -97,9 +97,14 @@ export default function GrantTypesPage() {
 
                 <div className="px-6 pb-6">
                   <Link
-                    to="/"
-                    className="block w-full text-center py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: '#2563a8' }}
+                    to="/#application-form"
+                    onClick={() => {
+                      setTimeout(() => {
+                        const el = document.getElementById('application-form')
+                        if (el) el.scrollIntoView({ behavior: 'smooth' })
+                      }, 100)
+                    }}
+                    className="inline-block w-full text-center bg-blue-700 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-800 transition"
                   >
                     Apply Now
                   </Link>

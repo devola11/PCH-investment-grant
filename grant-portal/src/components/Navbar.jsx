@@ -39,12 +39,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo — clickable, no underline */}
-          <Link
-            to="/"
-            onClick={() => setMobileOpen(false)}
-            className="no-underline"
-            style={{ textDecoration: 'none' }}
-          >
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={() => setMobileOpen(false)}>
             <Logo variant="light" />
           </Link>
 
