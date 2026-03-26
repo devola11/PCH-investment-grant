@@ -71,14 +71,14 @@ export default function AboutPage() {
       {/* Stats */}
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white border border-gray-200 px-6 py-8 text-center"
+                className="bg-white border border-gray-200 px-6 py-6 sm:py-8 text-center w-full"
                 style={{ borderTop: '3px solid #2563a8' }}
               >
-                <div className="text-3xl font-bold text-[#1a3c6e] mb-2">{stat.value}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-[#1a3c6e] mb-2">{stat.value}</div>
                 <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -92,9 +92,9 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-[#1a3c6e] uppercase tracking-wide mb-8">
             How It Works
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {steps.map((step) => (
-              <div key={step.number} className="flex gap-4 border border-gray-200 p-5 bg-gray-50">
+              <div key={step.number} className="flex gap-3 sm:gap-4 border border-gray-200 p-4 sm:p-5 bg-gray-50">
                 <div
                   className="w-9 h-9 flex-shrink-0 flex items-center justify-center text-white font-bold text-sm"
                   style={{ backgroundColor: '#1a3c6e' }}

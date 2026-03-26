@@ -8,7 +8,7 @@ import SuccessModal from './SuccessModal'
 
 function Field({ label, error, required, children, fullWidth }) {
   return (
-    <div className={fullWidth ? 'sm:col-span-2' : ''}>
+    <div className={fullWidth ? 'col-span-1 sm:col-span-2' : ''}>
       <label className="block text-sm font-semibold text-gray-700 mb-1.5">
         {label}
         {required && <span className="text-red-500 ml-0.5">*</span>}
@@ -220,11 +220,11 @@ export default function ApplicationForm() {
           )}
 
           {/* Submit */}
-          <div className="flex justify-end">
+          <div className="flex justify-center sm:justify-end">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex items-center gap-2 px-8 py-3 text-sm font-semibold text-white cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               style={{ backgroundColor: '#2563a8' }}
             >
               {isSubmitting && (

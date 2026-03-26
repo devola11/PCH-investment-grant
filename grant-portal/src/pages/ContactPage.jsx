@@ -59,11 +59,11 @@ export default function ContactPage() {
       {/* Contact cards */}
       <div className="bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 py-14">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {contactCards.map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center transition-shadow duration-200 hover:shadow-md"
+                className="bg-white border border-gray-200 rounded-xl p-5 sm:p-6 flex flex-col items-center text-center w-full transition-shadow duration-200 hover:shadow-md"
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-4"

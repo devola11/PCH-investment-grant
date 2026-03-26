@@ -7,21 +7,21 @@ export default function HeroBanner() {
 
   return (
     <div style={{ background: 'linear-gradient(135deg, #1a3c6e 0%, #2563a8 100%)' }} className="text-white">
-      <div className="max-w-5xl mx-auto px-4 py-14 sm:py-20">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-10 sm:py-16 md:py-20">
         {/* Badge */}
-        <div className="inline-block bg-white/10 border border-white/20 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6">
+        <div className="inline-block bg-white/10 border border-white/20 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-5">
           Official Grant Program
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-4">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-3">
           PCH Community<br />Investment Grant
         </h1>
-        <p className="text-blue-100 text-base sm:text-lg max-w-xl mb-10">
+        <p className="text-blue-100 text-sm sm:text-base md:text-lg max-w-xl mb-8">
           Supporting individuals and small businesses with financial assistance to build stronger communities.
         </p>
 
         {/* Grant Tiers */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {tiers.map((tier) => (
             <div
               key={tier.label}

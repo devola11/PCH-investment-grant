@@ -74,7 +74,7 @@ export default function FAQPage() {
           <div className="inline-block bg-white/10 border border-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-5">
             Support
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
             Frequently Asked Questions
           </h1>
           <p className="text-blue-100 text-base sm:text-lg">

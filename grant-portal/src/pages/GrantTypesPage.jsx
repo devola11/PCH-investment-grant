@@ -66,14 +66,14 @@ export default function GrantTypesPage() {
       {/* Grant cards */}
       <div className="bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4">
             {grants.map((grant) => (
               <div
                 key={grant.title}
                 className="bg-white border border-gray-200 flex flex-col"
                 style={{ borderTop: '3px solid #2563a8' }}
               >
-                <div className="px-6 pt-6 pb-4 flex-1">
+                <div className="px-4 lg:px-5 pt-5 pb-4 flex-1">
                   {/* Icon */}
                   <div
                     className="w-12 h-12 flex items-center justify-center mb-4 text-white"
@@ -95,7 +95,7 @@ export default function GrantTypesPage() {
                   <p className="text-sm text-gray-600 leading-relaxed">{grant.desc}</p>
                 </div>
 
-                <div className="px-6 pb-6">
+                <div className="px-4 lg:px-5 pb-5">
                   <Link
                     to="/#application-form"
                     onClick={() => {

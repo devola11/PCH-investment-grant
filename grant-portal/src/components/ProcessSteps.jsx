@@ -27,23 +27,23 @@ export default function ProcessSteps() {
       <h2 className="text-xl font-bold text-[#1a3c6e] mb-6 uppercase tracking-wide">
         How It Works
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
         {steps.map((step, idx) => (
           <div key={step.number} className="flex flex-col items-start">
-            {/* Connector line for desktop */}
-            <div className="flex items-center w-full mb-4">
+            {/* Connector line for desktop only */}
+            <div className="flex items-center w-full mb-3 md:mb-4">
               <div
-                className="w-10 h-10 flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
                 style={{ backgroundColor: '#2563a8' }}
               >
                 {step.number}
               </div>
               {idx < steps.length - 1 && (
-                <div className="hidden sm:block flex-1 h-px bg-blue-200 ml-2" />
+                <div className="hidden md:block flex-1 h-px bg-blue-200 ml-2" />
               )}
             </div>
-            <div className="font-bold text-[#1a3c6e] mb-1">{step.title}</div>
-            <div className="text-sm text-gray-500 leading-relaxed">{step.desc}</div>
+            <div className="font-bold text-[#1a3c6e] mb-1 text-sm md:text-base">{step.title}</div>
+            <div className="text-xs md:text-sm text-gray-500 leading-relaxed">{step.desc}</div>
           </div>
         ))}
       </div>
