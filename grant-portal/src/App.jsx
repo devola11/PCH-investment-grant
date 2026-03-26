@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import GrantTypesPage from './pages/GrantTypesPage'
 import AdminPage from './pages/AdminPage'
+import FAQPage from './pages/FAQPage'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/grant-types" element={<GrantTypesPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </div>
